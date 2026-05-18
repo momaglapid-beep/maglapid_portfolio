@@ -3,7 +3,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8"/>
-        <title>{{ $settings->hero_title ?? 'Portfolio' }}</title>
+        <title>{{ $settings?->hero_title ?? 'Portfolio' }}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="" name="description"/>
@@ -43,8 +43,8 @@
                         <!-- Logo -->
                         <div class="logo">
                             <a class="logo-wrap" href="#body">
-                                <img class="logo-img logo-img-main" src="{{ ($settings->logo ?? '') ? asset('storage/' . $settings->logo) : asset('img/logo.png') }}" alt="Asentus Logo">
-                                <img class="logo-img logo-img-active" src="{{ ($settings->logo_dark ?? '') ? asset('storage/' . $settings->logo_dark) : asset('img/logo-dark.png') }}" alt="Asentus Logo">
+                                <img class="logo-img logo-img-main" src="{{ ($settings?->logo ?? '') ? asset('storage/' . $settings?->logo) : asset('img/logo.png') }}" alt="Asentus Logo">
+                                <img class="logo-img logo-img-active" src="{{ ($settings?->logo_dark ?? '') ? asset('storage/' . $settings?->logo_dark) : asset('img/logo-dark.png') }}" alt="Asentus Logo">
                             </a>
                         </div>
                         <!-- End Logo -->
@@ -75,20 +75,20 @@
         <!--========== END HEADER ==========-->
 
         <!--========== SLIDER ==========-->
-        <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="{{ Str::startsWith($settings->hero_bg_image ?? '', 'img/') ? asset($settings->hero_bg_image) : asset('storage/' . ($settings->hero_bg_image ?? 'img/1920x1080/01.jpg')) }}">
+        <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="{{ Str::startsWith($settings?->hero_bg_image ?? '', 'img/') ? asset($settings?->hero_bg_image) : asset('storage/' . ($settings?->hero_bg_image ?? 'img/1920x1080/01.jpg')) }}">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="promo-block-divider">
-                            <h1 class="promo-block-title">{!! str_replace(' ', '<br/>', e($settings->hero_title ?? 'Alex Teseira')) !!}</h1>
-                            <p class="promo-block-text">{{ $settings->hero_subtitle ?? 'Web Designer & Front-end Developer' }}</p>
+                            <h1 class="promo-block-title">{!! str_replace(' ', '<br/>', e($settings?->hero_title ?? 'Alex Teseira')) !!}</h1>
+                            <p class="promo-block-text">{{ $settings?->hero_subtitle ?? 'Web Designer & Front-end Developer' }}</p>
                         </div>
                         <ul class="list-inline">
-                            @if($settings->social_facebook) <li><a href="{{ $settings->social_facebook }}" class="social-icons"><i class="icon-social-facebook"></i></a></li> @endif
-                            @if($settings->social_twitter) <li><a href="{{ $settings->social_twitter }}" class="social-icons"><i class="icon-social-twitter"></i></a></li> @endif
-                            @if($settings->social_dribbble) <li><a href="{{ $settings->social_dribbble }}" class="social-icons"><i class="icon-social-dribbble"></i></a></li> @endif
-                            @if($settings->social_behance) <li><a href="{{ $settings->social_behance }}" class="social-icons"><i class="icon-social-behance"></i></a></li> @endif
-                            @if($settings->social_linkedin) <li><a href="{{ $settings->social_linkedin }}" class="social-icons"><i class="icon-social-linkedin"></i></a></li> @endif
+                            @if($settings?->social_facebook) <li><a href="{{ $settings?->social_facebook }}" class="social-icons"><i class="icon-social-facebook"></i></a></li> @endif
+                            @if($settings?->social_twitter) <li><a href="{{ $settings?->social_twitter }}" class="social-icons"><i class="icon-social-twitter"></i></a></li> @endif
+                            @if($settings?->social_dribbble) <li><a href="{{ $settings?->social_dribbble }}" class="social-icons"><i class="icon-social-dribbble"></i></a></li> @endif
+                            @if($settings?->social_behance) <li><a href="{{ $settings?->social_behance }}" class="social-icons"><i class="icon-social-behance"></i></a></li> @endif
+                            @if($settings?->social_linkedin) <li><a href="{{ $settings?->social_linkedin }}" class="social-icons"><i class="icon-social-linkedin"></i></a></li> @endif
                         </ul>
                     </div>
                 </div>
@@ -104,13 +104,13 @@
                 <div class="row">
                     <div class="col-sm-3 sm-margin-b-30">
                         <div class="text-right sm-text-left">
-                            <h2 class="margin-b-0">{{ $settings->about_intro_title ?? 'Intro' }}</h2>
-                            <p>{{ $settings->about_intro_text ?? 'What I am all about.' }}</p>
+                            <h2 class="margin-b-0">{{ $settings?->about_intro_title ?? 'Intro' }}</h2>
+                            <p>{{ $settings?->about_intro_text ?? 'What I am all about.' }}</p>
                         </div>
                     </div>
                     <div class="col-sm-8 col-sm-offset-1">
                         <div class="margin-b-60">
-                            {!! nl2br(e($settings->about_description ?? '')) !!}
+                            {!! nl2br(e($settings?->about_description ?? '')) !!}
                         </div>
 
                         <!-- Progress Box -->
@@ -245,19 +245,19 @@
                             <div class="row">
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Location</h5>
-                                    <a href="#">{{ $settings->contact_location }}</a>
+                                    <a href="#">{{ $settings?->contact_location }}</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6 md-margin-b-30">
                                     <h5>Phone</h5>
-                                    <a href="#">{{ $settings->contact_phone }}</a>
+                                    <a href="#">{{ $settings?->contact_phone }}</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6">
                                     <h5>Email</h5>
-                                    <a href="mailto:{{ $settings->contact_email }}">{{ $settings->contact_email }}</a>
+                                    <a href="mailto:{{ $settings?->contact_email }}">{{ $settings?->contact_email }}</a>
                                 </div>
                                 <div class="col-md-3 col-xs-6">
                                     <h5>Web</h5>
-                                    <a href="#">{{ $settings->contact_web }}</a>
+                                    <a href="#">{{ $settings?->contact_web }}</a>
                                 </div>
                             </div>
                         </div>
@@ -274,7 +274,7 @@
             <div class="content container">
                 <div class="row">
                     <div class="col-xs-6">
-                        <img class="footer-logo" src="{{ ($settings->logo_dark ?? '') ? asset('storage/' . $settings->logo_dark) : asset('img/logo-dark.png') }}" alt="Aircv Logo">
+                        <img class="footer-logo" src="{{ ($settings?->logo_dark ?? '') ? asset('storage/' . $settings?->logo_dark) : asset('img/logo-dark.png') }}" alt="Aircv Logo">
                     </div>
                     <div class="col-xs-6 text-right sm-text-left">
                         <p class="margin-b-0"><a class="fweight-700" href="#">Aircv</a> Theme Powered by: <a class="fweight-700" href="http://www.keenthemes.com/">KeenThemes.com</a></p>
