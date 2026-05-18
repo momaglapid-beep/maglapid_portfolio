@@ -22,10 +22,9 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <!-- END HEAD -->
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- BODY -->
     <body id="body" data-spy="scroll" data-target=".header">
