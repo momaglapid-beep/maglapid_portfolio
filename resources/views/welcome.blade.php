@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="promo-block-divider">
-                            <h1 class="promo-block-title">{!! str_replace(' ', '<br/>', e($settings?->hero_title ?? 'Alex Teseira')) !!}</h1>
+                            <h1 class="promo-block-title">{!! str_replace(' ', '<br/>', e($settings?->hero_title ?? 'Monico Maglapid')) !!}</h1>
                             <p class="promo-block-text">{{ $settings?->hero_subtitle ?? 'Web Designer & Front-end Developer' }}</p>
                         </div>
                         <ul class="list-inline">

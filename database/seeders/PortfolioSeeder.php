@@ -21,23 +21,23 @@ class PortfolioSeeder extends Seeder
     {
         // Admin User
         User::create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
+            'name' => 'Monico Maglapid',
+            'email' => 'monico.maglapid@gmail.com',
             'password' => Hash::make('password'),
         ]);
 
         // Settings
         Setting::create([
-            'hero_title' => 'Alex Teseira',
+            'hero_title' => 'Monico Maglapid',
             'hero_subtitle' => 'Web Designer & Front-end Developer',
             'hero_bg_image' => 'img/1920x1080/01.jpg',
             'about_intro_title' => 'Intro',
             'about_intro_text' => 'What I am all about.',
-            'about_description' => "I'm Alex Teseira, orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            'contact_location' => 'Brooklyn, New York',
-            'contact_phone' => '+77 234 548 00 00',
-            'contact_email' => 'alex.teseira@gmail.com',
-            'contact_web' => 'alex.teseira.com',
+            'about_description' => "I'm Monico Maglapid, orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            'contact_location' => 'Philippines',
+            'contact_phone' => '+63 900 000 0000',
+            'contact_email' => 'monico.maglapid@gmail.com',
+            'contact_web' => 'monico.maglapid.com',
         ]);
 
         // Skills
@@ -69,10 +69,10 @@ class PortfolioSeeder extends Seeder
             'category' => 'Clean & Minimalistic Design',
             'image' => 'img/800x400/01.jpg',
             'description' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-            'leader' => 'John Doe',
-            'designer' => 'Alisa Keys',
-            'developer' => 'Mark Doe',
-            'customer' => 'Keenthemes',
+            'leader' => 'Monico Maglapid',
+            'designer' => 'Monico Maglapid',
+            'developer' => 'Monico Maglapid',
+            'customer' => 'Portfolio Client',
         ]);
         
         Work::create([
@@ -80,10 +80,10 @@ class PortfolioSeeder extends Seeder
             'category' => 'Clean & Minimalistic Design',
             'image' => 'img/397x400/01.jpg',
             'description' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            'leader' => 'John Doe',
-            'designer' => 'Alisa Keys',
-            'developer' => 'Mark Doe',
-            'customer' => 'Keenthemes',
+            'leader' => 'Monico Maglapid',
+            'designer' => 'Monico Maglapid',
+            'developer' => 'Monico Maglapid',
+            'customer' => 'Portfolio Client',
         ]);
 
         Work::create([
@@ -91,10 +91,10 @@ class PortfolioSeeder extends Seeder
             'category' => 'Clean & Minimalistic Design',
             'image' => 'img/397x300/01.jpg',
             'description' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            'leader' => 'John Doe',
-            'designer' => 'Alisa Keys',
-            'developer' => 'Mark Doe',
-            'customer' => 'Keenthemes',
+            'leader' => 'Monico Maglapid',
+            'designer' => 'Monico Maglapid',
+            'developer' => 'Monico Maglapid',
+            'customer' => 'Portfolio Client',
         ]);
     }
 }
