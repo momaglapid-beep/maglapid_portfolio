@@ -11,14 +11,14 @@
 
         <!-- GLOBAL MANDATORY STYLES -->
         <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
-        <link href="{{ secure_asset('vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css"/>
-        <link href="{{ secure_asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
 
         <!-- PAGE LEVEL PLUGIN STYLES -->
-        <link href="{{ secure_asset('css/animate.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
 
         <!-- THEME STYLES -->
-        <link href="{{ secure_asset('css/layout.min.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('css/layout.min.css') }}" rel="stylesheet" type="text/css"/>
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
@@ -43,9 +43,14 @@
 
                         <!-- Logo -->
                         <div class="logo">
+                            @guest
+                                <a href="{{ route('login') }}" class="login-btn-top" title="Admin Login" style="position: absolute; left: -30px; top: 50%; transform: translateY(-50%); color: #515769; font-size: 18px;">
+                                    <i class="icon-login"></i>
+                                </a>
+                            @endguest
                             <a class="logo-wrap" href="#body">
-                                <img class="logo-img logo-img-main" src="{{ ($settings?->logo ?? '') ? secure_asset('storage/' . $settings?->logo) : secure_asset('img/logo.png') }}" alt="Asentus Logo">
-                                <img class="logo-img logo-img-active" src="{{ ($settings?->logo_dark ?? '') ? secure_asset('storage/' . $settings?->logo_dark) : secure_asset('img/logo-dark.png') }}" alt="Asentus Logo">
+                                <img class="logo-img logo-img-main" src="{{ ($settings?->logo ?? '') ? asset('storage/' . $settings?->logo) : asset('img/logo.png') }}" alt="Asentus Logo">
+                                <img class="logo-img logo-img-active" src="{{ ($settings?->logo_dark ?? '') ? asset('storage/' . $settings?->logo_dark) : asset('img/logo-dark.png') }}" alt="Asentus Logo">
                             </a>
                         </div>
                         <!-- End Logo -->
@@ -76,7 +81,7 @@
         <!--========== END HEADER ==========-->
 
         <!--========== SLIDER ==========-->
-        <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="{{ Str::startsWith($settings?->hero_bg_image ?? '', 'img/') ? secure_asset($settings?->hero_bg_image) : secure_asset('storage/' . ($settings?->hero_bg_image ?? 'img/1920x1080/01.jpg')) }}">
+        <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="{{ Str::startsWith($settings?->hero_bg_image ?? '', 'img/') ? asset($settings?->hero_bg_image) : asset('storage/' . ($settings?->hero_bg_image ?? 'img/1920x1080/01.jpg')) }}">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
@@ -187,7 +192,7 @@
                                 <!-- Work -->
                                 <div class="work work-popup-trigger">
                                     <div class="work-overlay">
-                                        <img class="full-width img-responsive" src="{{ Str::startsWith($work->image ?? '', 'img/') ? secure_asset($work->image) : secure_asset('storage/' . $work->image) }}" alt="Portfolio Image">
+                                        <img class="full-width img-responsive" src="{{ Str::startsWith($work->image ?? '', 'img/') ? asset($work->image) : asset('storage/' . $work->image) }}" alt="Portfolio Image">
                                     </div>
                                     <div class="work-popup-overlay">
                                         <div class="work-popup-content">
@@ -291,25 +296,25 @@
 
         <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
         <!-- CORE PLUGINS -->
-                        <script src="{{ secure_asset('vendor/jquery.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/jquery-migrate.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+                        <script src="{{ asset('vendor/jquery.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/jquery-migrate.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
         <!-- PAGE LEVEL PLUGINS -->
-        <script src="{{ secure_asset('vendor/jquery.easing.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/jquery.back-to-top.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/jquery.smooth-scroll.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/jquery.wow.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/jquery.parallax.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/jquery.appear.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/masonry/jquery.masonry.pkgd.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('vendor/masonry/imagesloaded.pkgd.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/jquery.easing.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/jquery.back-to-top.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/jquery.smooth-scroll.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/jquery.wow.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/jquery.parallax.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/jquery.appear.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/masonry/jquery.masonry.pkgd.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('vendor/masonry/imagesloaded.pkgd.min.js') }}" type="text/javascript"></script>
 
         <!-- PAGE LEVEL SCRIPTS -->
-        <script src="{{ secure_asset('js/layout.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('js/components/progress-bar.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('js/components/masonry.min.js') }}" type="text/javascript"></script>
-        <script src="{{ secure_asset('js/components/wow.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/layout.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/components/progress-bar.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/components/masonry.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/components/wow.min.js') }}" type="text/javascript"></script>
 
     </body>
     <!-- END BODY -->

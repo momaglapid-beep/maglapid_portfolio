@@ -21,7 +21,11 @@ class SkillController extends Controller
 
     public function store(Request $request)
     {
-        Skill::create($request->all());
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'percentage' => 'required|integer|min:0|max:100',
+        ]);
+        Skill::create($validated);
         return redirect()->route('admin.skills.index')->with('success', 'Skill created successfully.');
     }
 
@@ -32,7 +36,11 @@ class SkillController extends Controller
 
     public function update(Request $request, Skill $skill)
     {
-        $skill->update($request->all());
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'percentage' => 'required|integer|min:0|max:100',
+        ]);
+        $skill->update($validated);
         return redirect()->route('admin.skills.index')->with('success', 'Skill updated successfully.');
     }
 

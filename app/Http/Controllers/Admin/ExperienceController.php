@@ -21,7 +21,12 @@ class ExperienceController extends Controller
 
     public function store(Request $request)
     {
-        Experience::create($request->all());
+        $validated = $request->validate([
+            'icon' => 'required|string',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+        Experience::create($validated);
         return redirect()->route('admin.experiences.index')->with('success', 'Experience created successfully.');
     }
 
@@ -32,7 +37,12 @@ class ExperienceController extends Controller
 
     public function update(Request $request, Experience $experience)
     {
-        $experience->update($request->all());
+        $validated = $request->validate([
+            'icon' => 'required|string',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+        $experience->update($validated);
         return redirect()->route('admin.experiences.index')->with('success', 'Experience updated successfully.');
     }
 

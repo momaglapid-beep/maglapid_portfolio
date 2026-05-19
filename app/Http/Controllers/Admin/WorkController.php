@@ -21,11 +21,22 @@ class WorkController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->except('image');
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'image' => 'nullable|image|max:2048',
+            'description' => 'required|string',
+            'leader' => 'nullable|string|max:255',
+            'designer' => 'nullable|string|max:255',
+            'developer' => 'nullable|string|max:255',
+            'customer' => 'nullable|string|max:255',
+        ]);
+
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('works', 'public');
+            $validated['image'] = $request->file('image')->store('works', 'public');
         }
-        Work::create($data);
+
+        Work::create($validated);
         return redirect()->route('admin.works.index')->with('success', 'Work created successfully.');
     }
 
@@ -36,11 +47,22 @@ class WorkController extends Controller
 
     public function update(Request $request, Work $work)
     {
-        $data = $request->except('image');
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'image' => 'nullable|image|max:2048',
+            'description' => 'required|string',
+            'leader' => 'nullable|string|max:255',
+            'designer' => 'nullable|string|max:255',
+            'developer' => 'nullable|string|max:255',
+            'customer' => 'nullable|string|max:255',
+        ]);
+
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('works', 'public');
+            $validated['image'] = $request->file('image')->store('works', 'public');
         }
-        $work->update($data);
+
+        $work->update($validated);
         return redirect()->route('admin.works.index')->with('success', 'Work updated successfully.');
     }
 
